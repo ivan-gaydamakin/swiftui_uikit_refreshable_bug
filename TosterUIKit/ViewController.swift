@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
+    @IBAction func tap(_ sender: Any) {
+        let vc = UIHostingController(rootView: ContentView())
+        let nv = PushingOverTabBarNavigationController(rootViewController: vc)
+        self.present(nv, animated: true)
+    }
+}
+
+
+private class PushingOverTabBarNavigationController: UINavigationController {
 
 
 }
-
